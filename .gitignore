@@ -1,0 +1,47 @@
+.idea/
+.DS_Store
+*.env.*
+
+__pycache__/
+*.pyc
+.terraform
+.terraform.lock.hcl
+/*.pkl
+scripts/logs
+
+venv/
+**/venv
+global-packages.txt
+.mypy_cache/
+.pytest_cache/
+.ruff_cache/
+
+# Coverage files
+.coverage
+coverage.xml
+htmlcov/
+.pytest_cache/
+coverage/
+
+# Python egg metadata
+*.egg-info/
+dependency_links.txt
+PKG-INFO
+SOURCES.txt
+top_level.txt
+
+# Log files
+logs/
+/.env*
+**/.env*
+
+# Build when installing from source
+build/
+dist/
+*.egg
+*.egg-info/
+.eggs/
+src/ascent_ai.egg-info/
+
+
+

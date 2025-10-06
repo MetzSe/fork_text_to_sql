@@ -1,0 +1,36 @@
+aiohttp
+boto3
+botocore
+datasets
+fastapi
+google-genai
+huggingface_hub
+matplotlib
+msal
+numpy
+openai
+openpyxl # needed to generate the SQL lite DB (query library)
+pandas
+protobuf
+pydantic
+pydantic_settings
+python-dotenv
+Requests
+scikit_learn
+sentence_transformers
+smolagents # for agentic approach
+snowflake-connector-python>=3.0.0
+SQLAlchemy
+starlette #FastAPI says not to pin the version of starlette since FastAPI will pick the right version
+streamlit
+tabulate
+tiktoken
+torch
+tqdm
+transformers
+typing_extensions
+urllib3
+vertexai
+azure-ai-inference # needed for deepseek r1
+markdown # for exporting agentic logs to html
+seaborn # plot heatmaps for uncertainty visualization
