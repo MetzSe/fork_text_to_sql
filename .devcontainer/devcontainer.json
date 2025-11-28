@@ -1,20 +1,39 @@
 {
-  "name": "Ascent AI Development Container",
-  "image": "mcr.microsoft.com/devcontainers/python:3.12",
-  "features": {
-    "ghcr.io/devcontainers-extra/features/sqlite:1": {}
+	"name": "Python 3.12 & Postgres",
+	"image": "mcr.microsoft.com/devcontainers/python:3.12",
+
+	// We use apt-get to install the Postgres client tools (psql)
+	// Then we use pip to install the current project in editable mode
+	"containerEnv": {
+    "GEMINI_API_KEY": "${localEnv:GEMINI_API_KEY}"
   },
-  "postCreateCommand": "pip install -e .",
-  "customizations": {
-    "vscode": {
-      "extensions": [
-        "ms-python.python",
-        "ms-python.vscode-pylance",
-        "alexcvzz.vscode-sqlite"
-      ],
-      "settings": {
-        "python.defaultInterpreterPath": "/usr/local/bin/python"
-      }
-    }
-  }
+  "updateContentCommand": "sudo apt-get update && sudo apt-get install -y postgresql-client && pip install --upgrade pip && pip install -e . && sed -i \"s/^GEMINI_API_KEY=.*/GEMINI_API_KEY=\\\"$GEMINI_API_KEY\\\"/\" example.env",
+
+	"customizations": {
+		"vscode": {
+			"settings": {
+				"python.defaultInterpreterPath": "/usr/local/bin/python"
+			},
+			"extensions": [
+				"charliermarsh.ruff",
+				"davidanson.vscode-markdownlint",
+				"eamodio.gitlens",
+				"esbenp.prettier-vscode",
+				"formulahendry.auto-close-tag",
+				"formulahendry.auto-rename-tag",
+				"foxundermoon.shell-format",
+				"grapecity.gc-excelviewer",
+				"jock.svg",
+				"mhutchie.git-graph",
+				"mikestead.dotenv",
+				"ms-azuretools.vscode-docker",
+				"ms-python.vscode-pylance",
+				"ms-python.python",
+				"streetsidesoftware.code-spell-checker",
+				"tamasfe.even-better-toml",
+				"wayou.vscode-todo-highlight",
+				"dvirtz.parquet-viewer"
+			]
+		}
+	}
 }
