@@ -20,7 +20,7 @@ classifiers = [
 ]
 
 [project.urls]
-"Homepage" = ""
+"Homepage" = "https://github.com/MetzSe/fork_text_to_sql"
 
 [tool.setuptools.packages.find]
 where = ["src"]
